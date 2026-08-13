@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "nl.plumaekaartspellen.watetenwevandaag",
+      "sha256_cert_fingerprints": [
+        "2F:71:03:51:00:84:18:C6:B1:5B:CF:AC:73:F9:35:15:AD:03:B5:5B:62:52:56:93:97:90:81:F9:12:C8:C0:A9"
+      ]
+    }
+  }
+]
