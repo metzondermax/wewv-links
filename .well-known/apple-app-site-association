@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "BAUDJ72G2X.nl.plumaekaartspellen.watetenwevandaag"
+        ],
+        "components": [
+          {
+            "/": "/r/*",
+            "comment": "Opens Wat Eten We Vandaag recipe links"
+          }
+        ]
+      }
+    ]
+  }
+}
