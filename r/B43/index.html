@@ -4,33 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Zelfgemaakte kip kerrie met rijst – Wat eten we vandaag?</title>
-<style>
-:root{color-scheme:light}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f3e8;color:#26221b;
-display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
-main{width:min(620px,100%);background:#fff;border:1px solid #e1d8c2;border-radius:18px;
-padding:36px;box-shadow:0 10px 35px rgba(45,35,15,.08);text-align:center}
-.brand{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#8b681c;font-weight:700}
-h1{font-size:30px;margin:12px 0 10px}
-.code{display:inline-block;margin:12px 0 22px;padding:7px 12px;border-radius:999px;
-background:#f3ead2;color:#6b4a0a;font-weight:700}
-p{line-height:1.6;margin:0 auto 20px;max-width:480px}
-a.button{display:inline-block;background:#a87412;color:#fff;text-decoration:none;font-weight:700;
-padding:12px 18px;border-radius:10px}
-.small{font-size:13px;color:#6f695f;margin-top:22px}
-</style>
+<meta name="theme-color" content="#f1eada">
+<title>Recept – Wat eten we vandaag?</title>
+<link rel="stylesheet" href="/r/recipe.css">
 </head>
 <body>
-<main>
-<div class="brand">Wat eten we vandaag? · Plumae Kaartspellen</div>
-<h1>Zelfgemaakte kip kerrie met rijst</h1>
-<div class="code">B43</div>
-<p>Dit recept hoort bij het kaartspel <strong>Wat eten we vandaag?</strong>. Wanneer de app op je telefoon is geïnstalleerd, kan deze link rechtstreeks het juiste recept in de app openen.</p>
-<p>Zie je deze pagina in je browser, dan is de app nog niet geïnstalleerd of de app-koppeling is nog niet actief.</p>
-<a class="button" href="https://plumaekaartspellen.nl/">Naar Plumae Kaartspellen</a>
-<p class="small">Receptcode: B43</p>
+<header class="sitebar">
+  <div class="sitebar__inner">
+    <a class="brand" href="https://plumaekaartspellen.nl/">Wat eten we vandaag?</a>
+    <a class="app-link" href="https://plumaekaartspellen.nl/app">Download de app</a>
+  </div>
+</header>
+
+<main id="recipe-root" aria-live="polite">
+  <section class="hero">
+    <div class="kicker">
+      <span class="pill pill--rust" id="recipe-code">...</span>
+      <span class="pill" id="recipe-set">Recept laden</span>
+    </div>
+    <h1 id="recipe-title">Recept laden…</h1>
+    <div class="meta">
+      <div class="meta__item" id="recipe-time">⏱ — minuten</div>
+      <div class="meta__item">👥 2 personen</div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Ingrediënten</h2>
+      <ul class="ingredients" id="ingredients"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Bereiding</h2>
+      <ol class="steps" id="steps"></ol>
+      <div class="tip" id="tip" hidden>
+        <strong>Tip</strong>
+        <span id="tip-text"></span>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta">
+    <h2>Liever alles in de app?</h2>
+    <p>Scan je kaarten, bewaar recepten, stel je weekmenu samen en laat automatisch een boodschappenlijst genereren.</p>
+    <a href="https://plumaekaartspellen.nl/app">Download de gratis app</a>
+  </section>
 </main>
+
+<footer id="recipe-footer">
+  Wat eten we vandaag? · Plumae Kaartspellen
+</footer>
+
+<noscript>
+  <div class="load-error">Schakel JavaScript in om dit recept te bekijken.</div>
+</noscript>
+<script src="/r/recipe.js" defer></script>
 </body>
 </html>
