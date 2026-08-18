@@ -4,33 +4,307 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f1eada">
 <title>Klassieke risotto met champignons – Wat eten we vandaag?</title>
 <style>
-:root{color-scheme:light}
+:root{
+  --cream:#f1eada;
+  --rust:#c35943;
+  --slate:#475a61;
+  --paper:#fffdf8;
+  --line:rgba(71,90,97,.18);
+  --soft:rgba(195,89,67,.10);
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f3e8;color:#26221b;
-display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
-main{width:min(620px,100%);background:#fff;border:1px solid #e1d8c2;border-radius:18px;
-padding:36px;box-shadow:0 10px 35px rgba(45,35,15,.08);text-align:center}
-.brand{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#8b681c;font-weight:700}
-h1{font-size:30px;margin:12px 0 10px}
-.code{display:inline-block;margin:12px 0 22px;padding:7px 12px;border-radius:999px;
-background:#f3ead2;color:#6b4a0a;font-weight:700}
-p{line-height:1.6;margin:0 auto 20px;max-width:480px}
-a.button{display:inline-block;background:#a87412;color:#fff;text-decoration:none;font-weight:700;
-padding:12px 18px;border-radius:10px}
-.small{font-size:13px;color:#6f695f;margin-top:22px}
+html{background:var(--cream)}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--cream);
+  color:var(--slate);
+  line-height:1.55;
+}
+a{color:inherit}
+.sitebar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  border-bottom:1px solid var(--line);
+  background:rgba(241,234,218,.96);
+  backdrop-filter:blur(10px);
+}
+.sitebar__inner{
+  width:min(960px,calc(100% - 28px));
+  margin:auto;
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  font-weight:800;
+  letter-spacing:-.02em;
+  text-decoration:none;
+}
+.app-link{
+  text-decoration:none;
+  background:var(--rust);
+  color:var(--paper);
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:.9rem;
+  font-weight:750;
+  white-space:nowrap;
+}
+main{
+  width:min(960px,calc(100% - 28px));
+  margin:0 auto;
+  padding:42px 0 72px;
+}
+.hero{
+  max-width:760px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+.kicker{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:14px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  min-height:32px;
+  padding:6px 11px;
+  border-radius:999px;
+  background:rgba(71,90,97,.08);
+  font-size:.86rem;
+  font-weight:700;
+}
+.pill--rust{background:var(--soft);color:#93402f}
+h1{
+  margin:0;
+  font-size:clamp(2.25rem,8vw,4.7rem);
+  line-height:.98;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+.meta{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.meta__item{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,253,248,.52);
+  padding:9px 12px;
+  font-weight:650;
+  font-size:.94rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:22px;
+  align-items:start;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:clamp(22px,4vw,34px);
+  box-shadow:0 14px 38px rgba(71,90,97,.08);
+}
+h2{
+  margin:0 0 20px;
+  font-size:clamp(1.5rem,3vw,2rem);
+  letter-spacing:-.025em;
+}
+.ingredients{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.ingredients li{
+  display:grid;
+  grid-template-columns:115px 1fr;
+  gap:14px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+.ingredients li:last-child{border-bottom:0;padding-bottom:0}
+.amount{font-weight:800;color:var(--rust)}
+.ingredient-name{font-weight:650}
+.note{
+  display:block;
+  margin-top:3px;
+  color:#718087;
+  font-size:.87rem;
+}
+.pantry{
+  display:inline-flex;
+  margin-top:4px;
+  padding:3px 7px;
+  border-radius:999px;
+  background:rgba(71,90,97,.08);
+  font-size:.75rem;
+  font-weight:700;
+}
+.steps{
+  list-style:none;
+  padding:0;
+  margin:0;
+  counter-reset:steps;
+}
+.steps li{
+  counter-increment:steps;
+  position:relative;
+  padding:0 0 25px 52px;
+}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{
+  content:counter(steps);
+  position:absolute;
+  left:0;
+  top:-2px;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--rust);
+  color:var(--paper);
+  font-weight:800;
+}
+.steps li:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  left:16px;
+  top:36px;
+  width:2px;
+  height:calc(100% - 32px);
+  background:var(--line);
+}
+.tip{
+  margin-top:22px;
+  padding:17px 18px;
+  border-radius:14px;
+  background:var(--soft);
+  border:1px solid rgba(195,89,67,.18);
+}
+.tip strong{display:block;color:var(--rust);margin-bottom:3px}
+.cta{
+  margin-top:28px;
+  background:var(--slate);
+  color:var(--paper);
+  border-radius:20px;
+  padding:clamp(24px,5vw,38px);
+  text-align:center;
+}
+.cta h2{color:inherit;margin-bottom:10px}
+.cta p{max-width:620px;margin:0 auto 20px;color:rgba(255,253,248,.82)}
+.cta a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:12px 22px;
+  border-radius:10px;
+  background:var(--rust);
+  color:var(--paper);
+  font-weight:800;
+  text-decoration:none;
+}
+footer{
+  width:min(960px,calc(100% - 28px));
+  margin:auto;
+  padding:0 0 34px;
+  text-align:center;
+  font-size:.84rem;
+  color:#718087;
+}
+@media(max-width:760px){
+  .sitebar__inner{min-height:58px}
+  .brand{font-size:.95rem}
+  .app-link{font-size:.82rem;padding:9px 11px}
+  main{padding-top:30px}
+  .grid{grid-template-columns:1fr}
+  .ingredients li{grid-template-columns:92px 1fr}
+}
 </style>
 </head>
 <body>
+<header class="sitebar">
+  <div class="sitebar__inner">
+    <a class="brand" href="https://plumaekaartspellen.nl/">Wat eten we vandaag?</a>
+    <a class="app-link" href="https://plumaekaartspellen.nl/app">Download de app</a>
+  </div>
+</header>
+
 <main>
-<div class="brand">Wat eten we vandaag? · Plumae Kaartspellen</div>
-<h1>Klassieke risotto met champignons</h1>
-<div class="code">B01</div>
-<p>Dit recept hoort bij het kaartspel <strong>Wat eten we vandaag?</strong>. Wanneer de app op je telefoon is geïnstalleerd, kan deze link rechtstreeks het juiste recept in de app openen.</p>
-<p>Zie je deze pagina in je browser, dan is de app nog niet geïnstalleerd of de app-koppeling is nog niet actief.</p>
-<a class="button" href="https://plumaekaartspellen.nl/">Naar Plumae Kaartspellen</a>
-<p class="small">Receptcode: B01</p>
+  <section class="hero">
+    <div class="kicker">
+      <span class="pill pill--rust">B01</span>
+      <span class="pill">Basisset</span>
+    </div>
+    <h1>Klassieke risotto met champignons</h1>
+    <div class="meta">
+      <div class="meta__item">⏱ 35 minuten</div>
+      <div class="meta__item">👥 2 personen</div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Ingrediënten</h2>
+      <ul class="ingredients">
+        <li><span class="amount">175 g</span><span><span class="ingredient-name">arboriorijst</span><span class="note">De perfecte soort rijst voor risotto!</span></span></li>
+        <li><span class="amount">250 g</span><span class="ingredient-name">kastanjechampignons</span></li>
+        <li><span class="amount">1 st</span><span class="ingredient-name">sjalot</span></li>
+        <li><span class="amount">2 teentjes</span><span class="ingredient-name">knoflook</span></li>
+        <li><span class="amount">750 ml</span><span><span class="ingredient-name">groentebouillon</span><span class="note">Alternatief: elke bouillon werkt.</span></span></li>
+        <li><span class="amount">50 g</span><span class="ingredient-name">Parmezaanse kaas</span></li>
+        <li><span class="amount">25 g</span><span class="ingredient-name">roomboter</span></li>
+        <li><span class="amount">naar smaak</span><span><span class="ingredient-name">olijfolie</span><span class="pantry">Uit de voorraadkast</span></span></li>
+        <li><span class="amount">naar smaak</span><span><span class="ingredient-name">zwarte peper</span><span class="pantry">Uit de voorraadkast</span></span></li>
+        <li><span class="amount">naar smaak</span><span><span class="ingredient-name">zout</span><span class="pantry">Uit de voorraadkast</span></span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Bereiding</h2>
+      <ol class="steps">
+        <li>Verwarm de groentebouillon. Verhit een scheut olijfolie in een ruime pan en fruit de sjalot en knoflook 2 minuten. Voeg de risottorijst toe en bak 1 minuut mee tot de korrels glazig zijn.</li>
+        <li>Voeg steeds een soeplepel warme bouillon toe en roer regelmatig. Wacht telkens tot de bouillon is opgenomen voordat je de volgende toevoegt. Herhaal dit ongeveer 20 minuten.</li>
+        <li>Verhit ondertussen een beetje olijfolie in een koekenpan en bak de kastanjechampignons goudbruin. Breng op smaak met peper en een klein beetje zout.</li>
+        <li>Roer de boter en Parmezaanse kaas door de risotto. Schep de gebakken kastanjechampignons erdoor en serveer direct met extra Parmezaanse kaas en zwarte peper naar smaak.</li>
+      </ol>
+
+      <div class="tip">
+        <strong>Tip</strong>
+        Bewaar wat parmezaan voor de topping!
+      </div>
+    </section>
+  </div>
+
+  <section class="cta">
+    <h2>Liever alles in de app?</h2>
+    <p>Scan je kaarten, bewaar recepten, stel je weekmenu samen en laat automatisch een boodschappenlijst genereren.</p>
+    <a href="https://plumaekaartspellen.nl/app">Download de gratis app</a>
+  </section>
 </main>
+
+<footer>
+  Recept B01 · Wat eten we vandaag? · Plumae Kaartspellen
+</footer>
 </body>
 </html>
