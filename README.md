@@ -1,11 +1,10 @@
-# WEWV QR-routes
+# wewv-links
 
-Upload de INHOUD van deze map naar de root van de bestaande GitHub Pages-repository.
+Publieke link- en fallbackpagina's voor **Wat Eten We Vandaag?** van Plumae Kaartspellen.
 
-Belangrijk:
-- `CNAME` moet `links.plumaekaartspellen.nl` blijven bevatten.
-- `.nojekyll` mag blijven staan.
-- `r/` bevat 118 receptbestemmingen.
-- `routes.json` is een controlelijst van alle routes.
-- Voeg `assetlinks.json` en `apple-app-site-association` nog niet toe.
-- Definitief QR-formaat: https://links.plumaekaartspellen.nl/r/B01
+- Receptlinks: `/r/{CODE}`
+- Online spelregels: `/spelregels/`
+- Android App Links: `/.well-known/assetlinks.json`
+- iOS Universal Links: `/.well-known/apple-app-site-association`
+
+De receptpagina's dienen als browserfallback wanneer de app niet is geïnstalleerd. De spelregels zijn als gewone webpagina beschikbaar en vallen bewust buiten `/r/`.
