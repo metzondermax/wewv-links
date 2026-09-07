@@ -43,6 +43,27 @@
     "zakje": "zakjes"
   };
 
+  // Naamcorrecties uit appversie 1.1.0. Deze worden alleen bij weergave
+  // toegepast; receptcode, ingrediënten en bereidingsstappen blijven intact.
+  // B18 is bewust gebruikt voor het kip-AVG'tje: B14 is in de actuele dataset
+  // de salade met gerookte kipfilet.
+  const recipeNameOverrides = {
+    B18: "AVG'tje met kipfilet, krieltjes en groente",
+    B26: "Roerbaknoedels met biefstuk",
+    B28: "Flatbread met souvlaki en tzatziki",
+    B36: "Zoete aardappelstamppot met marquez",
+    B39: "Broodje zelfgemaakte bal",
+    B40: "AVG'tje met biefstuk, krieltjes en groente",
+    B42: "Wraps met Aziatische kip met coleslaw",
+    P05: "Ravioli met champignons",
+    P07: "Pasta met garnalen",
+    P11: "Pasta met zalm en spinazie",
+    P14: "Pasta met chorizo",
+    P19: "Orzo met tomaat en burrata",
+    P20: "Crispy loaded ravioli",
+    G08: "Broodje zelfgemaakte kipburger"
+  };
+
   function amountText(row) {
     const [, quantity, unit] = row;
     if (quantity == null) return "naar smaak";
@@ -62,10 +83,11 @@
   }
 
   function render(recipe) {
-    document.title = `${recipe.n} – Wat eten we vandaag?`;
+    const displayName = recipeNameOverrides[recipe.c] || recipe.n;
+    document.title = `${displayName} – Wat eten we vandaag?`;
     document.getElementById("recipe-code").textContent = recipe.c;
     document.getElementById("recipe-set").textContent = recipe.s;
-    document.getElementById("recipe-title").textContent = recipe.n;
+    document.getElementById("recipe-title").textContent = displayName;
     document.getElementById("recipe-time").textContent = `⏱ ${recipe.t} minuten`;
     document.getElementById("ingredients").innerHTML = recipe.i.map(ingredientHtml).join("");
     document.getElementById("steps").innerHTML = recipe.b.map(step => `<li>${escapeHtml(step)}</li>`).join("");
