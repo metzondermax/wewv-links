@@ -102,6 +102,23 @@ h1{
   font-weight:650;
   font-size:.94rem;
 }
+.recipe-shop-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  max-width:100%;
+  margin-top:18px;
+  padding:12px 22px;
+  border-radius:10px;
+  background:var(--rust);
+  color:var(--paper);
+  font-weight:800;
+  text-align:center;
+  text-decoration:none;
+}
+.recipe-shop-link:hover{background:#a94b38}
+.recipe-shop-link:focus-visible{outline:3px solid var(--slate);outline-offset:3px}
 .grid{
   display:grid;
   grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
