@@ -119,12 +119,6 @@ h1{
 }
 .recipe-shop-link:hover{background:#a94b38}
 .recipe-shop-link:focus-visible{outline:3px solid var(--slate);outline-offset:3px}
-.recipe-shop-note{
-  margin:7px 0 0;
-  color:#718087;
-  font-size:.85rem;
-  font-style:italic;
-}
 .grid{
   display:grid;
   grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
@@ -237,6 +231,12 @@ h2{
   color:var(--paper);
   font-weight:800;
   text-decoration:none;
+}
+.cta .cta__note{
+  margin:8px auto 0;
+  color:rgba(255,253,248,.82);
+  font-size:.85rem;
+  font-style:italic;
 }
 footer{
   width:min(960px,calc(100% - 28px));
